@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './App.css';
 import logo from './mlh-prep.png'
-import { change_bg, message } from "./color_scheme.js";
+import { change_bg } from "./color_scheme.js";
 
 function App() {
   const [error, setError] = useState(null);
@@ -19,6 +19,7 @@ function App() {
           } else {
             setIsLoaded(true);
             setResults(result);
+            change_bg(result?.weather[0].main)
           }
         },
         (error) => {
@@ -38,7 +39,7 @@ function App() {
         <input
           type="text"
           value={city}
-          onChange={event => {setCity(event.target.value); change_bg(results.weather[0].main)}} />
+          onChange={event => {setCity(event.target.value)}} />
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}
           {console.log(results)}
