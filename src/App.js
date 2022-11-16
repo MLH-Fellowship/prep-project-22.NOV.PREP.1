@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import './App.css';
 import logo from './mlh-prep.png'
+import { change_bg, message } from "./color_scheme.js";
 
 function App() {
   const [error, setError] = useState(null);
@@ -9,7 +10,7 @@ function App() {
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&appid=" + process.env.REACT_APP_APIKEY)
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&appid=" + "34e864892922764d25dc36f8d8f94373")
       .then(res => res.json())
       .then(
         (result) => {
@@ -37,7 +38,7 @@ function App() {
         <input
           type="text"
           value={city}
-          onChange={event => setCity(event.target.value)} />
+          onChange={event => {setCity(event.target.value); change_bg(results.weather[0].main)}} />
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}
           {console.log(results)}
