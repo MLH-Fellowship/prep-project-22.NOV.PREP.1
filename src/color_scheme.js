@@ -17,6 +17,9 @@ export function change_bg(climate) {
       break;
     case 'Atmosphere':
       document.body.style.backgroundImage = "url('assets/atmosphere.gif')";
+      break; 
+    case 'Clear':
+      document.body.style.backgroundImage = "url('assets/clear.gif')";
       break;   
     default:
         document.body.style.backgroundImage = "url('assets/atmosphere.gif')";
