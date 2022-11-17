@@ -16,6 +16,7 @@ const DefaultIcon = leaflet.icon({
     shadowUrl: iconShadow,
     iconSize: [25, 41],
     iconAnchor: [12, 41],
+    popupAnchor: [0, -41],
 });
 
 leaflet.Marker.prototype.options.icon = DefaultIcon;
@@ -69,7 +70,7 @@ const Map = ({ city, setCity, cityCoordinates, setCityCoordinates }) => {
             center={[cityCoordinates.lat, cityCoordinates.lon]}
             scrollWheelZoom={true}
             zoom={7}
-            style={{width:'100%',height:'100vh',borderRadius:'10px'}}
+            style={{width:'100%',height:'50vh',borderRadius:'10px'}}
         >
         <TileLayer
             attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
