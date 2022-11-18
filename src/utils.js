@@ -12,11 +12,17 @@ export const getAutocompleteCities = (query, setFunc) =>
 
       const cities = res.features
         .map((feature) => {
-          return feature?.properties?.city ?? null;
+          return {
+            city: feature?.properties?.city ?? null,
+            country: feature?.properties?.country ?? null,
+          };
         })
-        .filter((city) => city !== null);
+        .filter((city) => city.city !== null);
 
-      setFunc([...new Set(cities)]);
+      // Remove duplicate objects
+      setFunc([
+        ...new Map(cities.map((item) => [item["city"], item])).values(),
+      ]);
 
       return cities;
     } catch (err) {
