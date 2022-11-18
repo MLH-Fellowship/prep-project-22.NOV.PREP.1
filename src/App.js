@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './App.css';
 import logo from './mlh-prep.png'
-import { change_bg } from "./color_scheme.js";
+import { change_bg, change_icon } from "./color_scheme.js";
 
 function App() {
   const [error, setError] = useState(null);
@@ -39,11 +39,14 @@ function App() {
         <input
           type="text"
           value={city}
-          onChange={event => {setCity(event.target.value)}} />
+          onChange={event => { setCity(event.target.value) }} />
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}
           {console.log(results)}
           {isLoaded && results && <>
+            <div className="weather-container">
+              {change_icon(results?.weather[0].main)}
+            </div>
             <h3>{results.weather[0].main}</h3>
             <p>Feels like {results.main.feels_like}°C</p>
             <i><p>{results.name}, {results.sys.country}</p></i>
