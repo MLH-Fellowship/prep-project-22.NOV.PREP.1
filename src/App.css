@@ -1,7 +1,7 @@
 body {
-    background-color: #133667;
-    color: white;
-    text-align: center;
+  background-color: #133667;
+  color: white;
+  text-align: center;
 }
 
 .logo {
@@ -12,11 +12,23 @@ body {
   margin-top: 20px;
 }
 
+.input-icon {
+  position: absolute;
+  color: black;
+  font-size: 25px;
+  padding-left: 10px;
+  padding-top: 7px;
+}
+
 input {
   padding: 10px;
+  padding-left: 35px !important;
   border-radius: 4px;
   border: 10px;
-  width: 200px
+  width: 230px;
+  height: 20px;
+  font-size: 16px;
+  max-width: fit-content;
 }
 
 .Results {
@@ -27,7 +39,7 @@ input {
   border-radius: 8px;
   color: black;
   padding: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .weather-map {
