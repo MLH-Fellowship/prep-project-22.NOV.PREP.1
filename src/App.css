@@ -1,7 +1,13 @@
 body {
-  background-color: #133667;
   color: white;
   text-align: center;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  background-color: #133667;
+  display: inline-block;
 }
 
 .logo {
@@ -33,11 +39,18 @@ input {
 
 .Results {
   background-color: white;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 35%;
+  margin-right: 35%;
   margin-top: 20px;
   border-radius: 8px;
   color: black;
-  padding: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 1.5%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+@media (max-width: 750px) {
+  .Results {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
