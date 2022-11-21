@@ -332,3 +332,10 @@ input {
     margin-right: 20%;
   }
 }
+
+.weather-map {
+  position: relative;
+  margin: 2% auto;
+  width: 80%;
+  height: fit-content;
+}

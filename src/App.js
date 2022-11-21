@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import SearchBar from "./components/input/SearchBar";
+import Map from "./components/Map";
 import logo from "./mlh-prep.png";
 import { change_bg, change_icon } from "./color_scheme.js";
 
@@ -9,6 +10,10 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [city, setCity] = useState("New York City");
   const [results, setResults] = useState(null);
+  const [cityCoordinates, setCityCoordinates] = useState({
+    lat: 51.505,
+    lon: -0.09,
+  });
 
   useEffect(() => {
     fetch(
@@ -22,6 +27,10 @@ function App() {
           } else {
             setIsLoaded(true);
             setResults(result);
+            setCityCoordinates({
+              lat: result.coord.lat,
+              lon: result.coord.lon,
+            });
             change_bg(result?.weather[0].main)
           }
         },
@@ -57,6 +66,13 @@ function App() {
               </i>
             </>
           )}
+        </div>
+        <div className="weather-map">
+          <Map 
+            city={city}
+            setCity={setCity}
+            cityCoordinates={cityCoordinates}
+            setCityCoordinates={setCityCoordinates}/>
         </div>
       </div>
     </React.Fragment>
