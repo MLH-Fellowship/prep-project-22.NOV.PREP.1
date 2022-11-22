@@ -4,7 +4,7 @@ import SearchBar from "./components/input/SearchBar";
 import Map from "./components/Map";
 import logo from "./mlh-prep.png";
 import { change_bg, change_icon } from "./color_scheme.js";
-
+import Carryitems from "../src/components/CarryItems/Carryitems"
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -44,6 +44,24 @@ function App() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+  const weather = weatherType => {
+    switch (weatherType) {
+      case "Clouds":
+        return "cloudy";
+      case "Clear":
+        return "clear";
+      case "Rain":
+        return "rainy";
+      case "Snow":
+        return "snowy";
+      case "Thunderstorm":
+        return "stormy";
+      case "Drizzle":
+        return "drizzly";
+      default:
+        return "haze";
+    }
+  };
 
   return (
     <React.Fragment>
@@ -68,6 +86,7 @@ function App() {
           )}
         </div>
         <div className="weather-map">
+          <Carryitems/>
           <Map 
             city={city}
             setCity={setCity}
