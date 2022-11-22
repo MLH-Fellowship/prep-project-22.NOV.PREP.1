@@ -15,7 +15,7 @@ export default function Carryitems({weatherKind}) {
   const requiredItems = x => {
     if (x === "Rain") return [Raincoat, Umbrella,Boots];
     if (x === "Snow") return [WinterHat, WinterScarf, Jacket];
-    if (x === "Clear") return [Cap, SunScreen, SunGlasses];
+    if (x === "clear") return [Cap, SunScreen, SunGlasses];
     if (x === "Clouds") return [Umbrella, Cap];
     if (x === "Tornado") return [Torch, SunGlasses,Boots];
     if (x === "Drizzle") return [Raincoat, Umbrella,Boots];
