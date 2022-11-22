@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SearchBar from "./components/input/SearchBar";
 import logo from "./mlh-prep.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [error, setError] = useState(null);
@@ -44,7 +47,7 @@ function App() {
 
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}
-          {/* {console.log(results)} */}
+          {/* {console.log(results.coord.lat)}          */}
           {isLoaded && results && (
             <>
               <h3>{results.weather[0].main}</h3>
@@ -57,6 +60,10 @@ function App() {
             </>
           )}
         </div>
+        <br />
+        <br/>
+      <Forecast />
+
       </div>
     </React.Fragment>
   );
