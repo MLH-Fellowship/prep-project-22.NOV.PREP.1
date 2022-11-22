@@ -75,9 +75,10 @@ function App() {
 
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}
-          {/* {console.log(results)} */}
           {isLoaded && results && (
             <>
+            <div className="weather-container">
+              {change_icon(results?.weather[0].main)} </div>
               <h3>{results.weather[0].main}</h3>
               <p>Feels like {results.main.feels_like}°C</p>
               <i>
