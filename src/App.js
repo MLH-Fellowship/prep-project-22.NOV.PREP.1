@@ -10,6 +10,8 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [city, setCity] = useState("New York City");
   const [results, setResults] = useState(null);
+  const [weatherType, setWeatherType] = useState("");
+
   const [cityCoordinates, setCityCoordinates] = useState({
     lat: 51.505,
     lon: -0.09,
@@ -27,6 +29,7 @@ function App() {
           } else {
             setIsLoaded(true);
             setResults(result);
+            setWeatherType(result.weather[0].main)
             setCityCoordinates({
               lat: result.coord.lat,
               lon: result.coord.lon,
