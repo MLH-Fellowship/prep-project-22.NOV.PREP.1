@@ -27,7 +27,7 @@ const ItemNeed = (props) => {
             <h2> Items you should bring </h2>
         <div className="Items-box"> 
             {
-           weather_items[weatherdata] && weather_items[weatherdata].map((item)=> (
+           weather_details[weatherdata] && weather_details[weatherdata].map((item)=> (
             <img className="item" key={item}  src={ require (`../../assets/images/${item}.png`).default} alt={`${item}`}/>  
             )) }  
             </div>   
