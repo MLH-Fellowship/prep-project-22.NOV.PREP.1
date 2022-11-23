@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match snapshot 1`] = `
+<div
+  className="input-container"
+>
+  <i
+    aria-hidden="true"
+    className="fa fa-map-marker input-icon"
+  />
+  <input
+    autoComplete="off"
+    data-testid="search-bar"
+    defaultValue="New York City"
+    list="cities"
+    name="search"
+    onChange={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    placeholder="Enter a city"
+    type="text"
+  />
+</div>
+`;
