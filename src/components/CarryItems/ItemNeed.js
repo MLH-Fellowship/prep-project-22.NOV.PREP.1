@@ -1,34 +1,33 @@
 const ItemNeed = (props) => {
-    let weather_items= {
+    let weather_details= {
         "Clear" : ["sunglasses", "sunscreen"],  
     
-        "Rain"          : ["umbrella", "coat"] , 
-        "Drizzle"       : ["umbrella", "coat"] , 
-        "Clouds"        : ["umbrella" , "coat"],
-        "Snow"          : ["coat" , "umbrella"], 
+        "Rain"          : ["umbrella", "raincoat","boots"] , 
+        "Drizzle"       : ["umbrella", "raincoat","boots"] , 
+        "Clouds"        : ["umbrella" , "raincoat",,"mittens"],
+        "Snow"          : ["raincoat" , "umbrella","mittens"], 
     
     
-        "Tornado"       : ["flashlight" ,"firstaid"], 
-        "Thunderstorm"  : ["first-aid" , "cannedfood"], 
+        "Tornado"       : ["torch" ,"winter-hat"], 
+        "Thunderstorm"  : ["umbrella" , "boots"], 
     
-        "Squall"        : ["goggles" , "mask"], 
-        "Ash"           : ["goggles" , "mask"], 
-        "Dust"          : ["goggles" , "mask"], 
-        "Smoke"         : ["goggles" , "mask"], 
-        "Haze"          : ["goggles" , "mask"], 
-        "Fog"           : ["goggles" , "mask"], 
-        "Mist"          : ["goggles" , "mask"], 
-        "Sand"          : ["goggles" , "mask"],
+        "Squall"        :  ["sunglasses", "Torch"],  
+        "Ash"           :  ["sunglasses", "cap","torch"],  
+        "Dust"          : ["sunglasses", "sunscreen","torch"],   
+        "Smoke"         :  ["sunglasses", "sunscreen","torch"],  
+        "Haze"          :  ["sunglasses", "sunscreen","torch"],  
+        "Fog"           :  ["torch","raincoat"],  
+        "Mist"          :["torch","raincoat"],    
+        "Sand"          : ["sunglasses", "sunscreen"],  
     
     } ; 
-    const k = props.ok ;
-    console.log(`key is ${k}`);
+    const weatherdata = props.resultantdata ;
     return (  
         <div className="Items-to-bring"> 
             <h2> Items you should bring </h2>
         <div className="Items-box"> 
             {
-           weather_items[k] && weather_items[k].map((item)=> (
+           weather_items[weatherdata] && weather_items[weatherdata].map((item)=> (
             <img className="item" key={item}  src={ require (`../../assets/images/${item}.png`).default} alt={`${item}`}/>  
             )) }  
             </div>   

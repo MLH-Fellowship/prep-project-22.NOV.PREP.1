@@ -71,7 +71,7 @@ function App() {
             </>
           )}
         </div>
-        <ItemNeed ok = {results && results.weather[0].main}    /> 
+        <ItemNeed resultantdata = {results && results.weather[0].main}    /> 
 
 
             <div className="weather-map">
