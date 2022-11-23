@@ -11,7 +11,7 @@ import Torch from "../../assets/images/torch.png";
 import Umbrella from "../../assets/images/umbrella.png";
 import WinterHat from "../../assets/images/winter-hat.png";
 import WinterScarf from "../../assets/images/winter-scarf.png";
-export default function Carryitems({weatherKind}) {
+const Carryitems = ({ weatherKind,results}) => {
   const requiredItems = x => {
     if (x === "Rain") return [Raincoat, Umbrella,Boots];
     if (x === "Snow") return [WinterHat, WinterScarf, Jacket];
@@ -51,3 +51,4 @@ export default function Carryitems({weatherKind}) {
     </>
 )    }
 
+export default Carryitems;

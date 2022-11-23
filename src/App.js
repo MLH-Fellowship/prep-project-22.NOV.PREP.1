@@ -4,7 +4,8 @@ import SearchBar from "./components/input/SearchBar";
 import Map from "./components/Map";
 import logo from "./mlh-prep.png";
 import { change_bg, change_icon } from "./color_scheme.js";
-import Carryitems from "../src/components/CarryItems/Carryitems"
+import Carryitems from "./components/CarryItems/Carryitems";
+import CardData from "./components/CarryItems/CardData";
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -38,6 +39,8 @@ function App() {
           }
         },
         (error) => {
+          setWeatherType(error);
+
           setIsLoaded(true);
           setError(error);
         }
@@ -89,8 +92,8 @@ function App() {
             </>
           )}
         </div>
+        <CardData results={results} />
         <div className="weather-map">
-          <Carryitems/>
           <Map 
             city={city}
             setCity={setCity}
