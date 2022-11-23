@@ -4,14 +4,12 @@ import SearchBar from "./components/input/SearchBar";
 import Map from "./components/Map";
 import logo from "./mlh-prep.png";
 import { change_bg, change_icon } from "./color_scheme.js";
-import Carryitems from "./components/CarryItems/Carryitems";
-import CardData from "./components/CarryItems/CardData";
+import ItemNeed from "./components/CarryItems/ItemNeed";
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [city, setCity] = useState("New York City");
   const [results, setResults] = useState(null);
-  const [weatherType, setWeatherType] = useState("");
 
   const [cityCoordinates, setCityCoordinates] = useState({
     lat: 51.505,
@@ -30,7 +28,6 @@ function App() {
           } else {
             setIsLoaded(true);
             setResults(result);
-            setWeatherType(result.weather[0].main)
             setCityCoordinates({
               lat: result.coord.lat,
               lon: result.coord.lon,
@@ -39,7 +36,6 @@ function App() {
           }
         },
         (error) => {
-          setWeatherType(error);
 
           setIsLoaded(true);
           setError(error);
@@ -50,24 +46,7 @@ function App() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-  const weather = weatherType => {
-    switch (weatherType) {
-      case "Clouds":
-        return "cloudy";
-      case "Clear":
-        return "clear";
-      case "Rain":
-        return "rainy";
-      case "Snow":
-        return "snowy";
-      case "Thunderstorm":
-        return "stormy";
-      case "Drizzle":
-        return "drizzly";
-      default:
-        return "haze";
-    }
-  };
+ 
 
   return (
     <React.Fragment>
@@ -92,8 +71,10 @@ function App() {
             </>
           )}
         </div>
-        <CardData results={results} />
-        <div className="weather-map">
+        <ItemNeed ok = {results && results.weather[0].main}    /> 
+
+
+            <div className="weather-map">
           <Map 
             city={city}
             setCity={setCity}
