@@ -6,6 +6,7 @@
 .items-outer {
     padding-top: 0.1%;
     margin:auto;
+    margin-top: 10px;
     margin-bottom: 10px;
     width: 70%;
     background-color: #1b2d3f;
