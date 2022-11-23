@@ -4,12 +4,13 @@ import SearchBar from "./components/input/SearchBar";
 import Map from "./components/Map";
 import logo from "./mlh-prep.png";
 import { change_bg, change_icon } from "./color_scheme.js";
-
+import ItemNeed from "./components/CarryItems/ItemNeed";
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [city, setCity] = useState("New York City");
   const [results, setResults] = useState(null);
+
   const [cityCoordinates, setCityCoordinates] = useState({
     lat: 51.505,
     lon: -0.09,
@@ -35,6 +36,7 @@ function App() {
           }
         },
         (error) => {
+
           setIsLoaded(true);
           setError(error);
         }
@@ -44,6 +46,7 @@ function App() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+ 
 
   return (
     <React.Fragment>
@@ -68,7 +71,10 @@ function App() {
             </>
           )}
         </div>
-        <div className="weather-map">
+        <ItemNeed resultantdata = {results && results.weather[0].main}    /> 
+
+
+            <div className="weather-map">
           <Map 
             city={city}
             setCity={setCity}
