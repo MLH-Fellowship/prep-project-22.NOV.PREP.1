@@ -53,7 +53,7 @@ function App() {
       <img className="logo" src={logo} alt="MLH Prep Logo"></img>
       <div>
         <h2>Enter a city below 👇</h2>
-        <SearchBar setCity={setCity} />
+        <SearchBar setCity={setCity} city={city} />
 
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}

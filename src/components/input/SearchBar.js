@@ -1,10 +1,14 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getAutocompleteCities } from "../../utils";
 
-const SearchBar = ({ setCity }) => {
+const SearchBar = ({ city, setCity }) => {
   const inputRef = useRef();
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   let reqTimeout = null;
+
+  useEffect (() => {
+    inputRef.current.value = city;
+  }, [city]);
 
   // Load suggestations
   const handleOnChange = async (e) => {
@@ -23,7 +27,6 @@ const SearchBar = ({ setCity }) => {
 
     // Triggered when user clicks enter on input field
     if (e.code === "Enter") {
-      console.log("Entered on TF");
       setCity(cityValue);
     }
   };
@@ -44,6 +47,7 @@ const SearchBar = ({ setCity }) => {
     <div className="input-container">
       <i className="fa fa-map-marker input-icon" aria-hidden="true"></i>
       <input
+        data-testid="search-bar"
         ref={inputRef}
         list="cities"
         name="search"
@@ -56,14 +60,18 @@ const SearchBar = ({ setCity }) => {
         onInput={handleListItemClick}
       />
 
-      <datalist id="cities">
-        {autocompleteCities.map((city, i) => (
-          <option
-            key={i}
-            value={city.city}
-          >{`${city.city}, ${city.country}`}</option>
-        ))}
-      </datalist>
+      {
+        autocompleteCities.length > 0 && (
+          <datalist data-testid="data-list" id="cities">
+            {autocompleteCities.map((city, i) => (
+              <option
+                key={i}
+                value={city.city}
+              >{`${city.city}, ${city.country}`}</option>
+            ))}
+          </datalist>
+        )
+      }
     </div>
   );
 };
