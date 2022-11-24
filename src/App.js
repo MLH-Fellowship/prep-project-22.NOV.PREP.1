@@ -61,7 +61,7 @@ function App() {
         <div className="weather-map-container"> 
           <div className="weather-map-container-wrapper"> 
               <Result results={results} isLoaded={isLoaded} gifurl={gifurl}/>
-                <div className="map">
+                <div className="weather-map">
                   <Map 
                     city={city}
                     setCity={setCity}
@@ -72,10 +72,6 @@ function App() {
         </div>
 
         <ItemNeed resultantdata = {results && results.weather[0].main}    /> 
-
-
-            <div className="weather-map">
-        </div>
       </div>
     </React.Fragment>
   );

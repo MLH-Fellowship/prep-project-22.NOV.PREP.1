@@ -70,7 +70,7 @@ const Map = ({ city, setCity, cityCoordinates, setCityCoordinates }) => {
             center={[cityCoordinates.lat, cityCoordinates.lon]}
             scrollWheelZoom={true}
             zoom={7}
-            style={{width:'100%',height:'50vh',borderRadius:'10px'}}
+            style={{width:'100%',height:'49vh',borderRadius:'10px'}}
         >
         <TileLayer
             attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'

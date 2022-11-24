@@ -25,11 +25,14 @@ const ItemNeed = (props) => {
     return (  
         <div className="Items-to-bring"> 
             <h2> Items you should bring </h2>
-        <div className="Items-box"> 
-            {
-           weather_details[weatherdata] && weather_details[weatherdata].map((item)=> (
-            <img className="item" key={item}  src={ require (`../../assets/images/${item}.png`).default} alt={`${item}`}/>  
-            )) }  
+            <div className="Items-box"> 
+                {
+                weather_details[weatherdata] && weather_details[weatherdata].map((item)=> (
+                    <div className="Item-container">
+                        <img key={item}  src={ require (`../../assets/images/${item}.png`).default} alt={`${item}`}/>  
+                        <p>{item[0].toUpperCase() + item.slice(1)}</p>
+                    </div>
+                )) }  
             </div>   
         </div>
     );

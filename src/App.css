@@ -333,10 +333,8 @@ input {
 }
 
 .weather-map {
-  position: relative;
-  margin: 2% auto;
-  width: 80%;
-  height: fit-content;
+  width: 32%;
+  margin-left: 20px;
 }
 
 
@@ -411,7 +409,7 @@ input {
 .Results-overlay{
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.565);
+  background-color: rgba(0, 0, 0, 0.303);
   border-radius: inherit;
 }
 
@@ -424,11 +422,55 @@ input {
 }
 .weather-map-container-wrapper{
   display: flex;
-  width: 98%;
-
+  width: 90%;
 }
-.map{
-  width: 32%;
-  height: 100%;
-  margin-left: 20px;
+
+
+.Items-to-bring{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.Items-to-bring h2{
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.Items-box{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+.Item-container{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: max-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(237, 237, 237);
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px #737171;
+}
+
+.Item-container:hover{
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
+
+.Item-container img{
+  width: 150px;
+}
+
+.Item-container p{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
 }
