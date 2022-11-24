@@ -3,7 +3,7 @@ import "./App.css";
 import SearchBar from "./components/input/SearchBar";
 import Map from "./components/Map";
 import logo from "./mlh-prep.png";
-import { change_bg, change_icon } from "./color_scheme.js";
+import { change_bg, change_icon } from "./components/color_scheme/color_scheme.js";
 import ItemNeed from "./components/CarryItems/ItemNeed";
 function App() {
   const [error, setError] = useState(null);
