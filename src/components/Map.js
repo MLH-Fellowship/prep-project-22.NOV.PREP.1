@@ -78,8 +78,8 @@ const Map = ({ city, setCity, cityCoordinates, setCityCoordinates }) => {
       }}
     >
       <TileLayer
-        attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png?api_key={process.env.REACT_APP_APIKEY}"
       />
       <SetMarkerDynamically
         city={city}
