@@ -1,31 +1,22 @@
 export function change_bg(climate) {
   switch(climate) {
     case 'Snow':
-      document.body.style.backgroundImage = "url('assets/snow.gif')";
-      break;
+      return "url('assets/snow.gif')";
     case 'Clouds':
-      document.body.style.backgroundImage = "url('assets/clouds.gif')";
-      break;
+      return "url('assets/clouds.gif')";
     case 'Rain':
-      document.body.style.backgroundImage = "url('assets/rain.gif')";
-      break;
+      return "url('assets/rain.gif')";
     case 'Thunderstorm':
-      document.body.style.backgroundImage = "url('assets/thunderstorm.gif')";
-      break;
+       return "url('assets/thunderstorm.gif')";
     case 'Drizzle':
-      document.body.style.backgroundImage = "url('assets/drizzle.gif')";
-      break;
+       return "url('assets/drizzle.gif')";
     case 'Atmosphere':
-      document.body.style.backgroundImage = "url('assets/atmosphere.gif')";
-      break; 
+       return "url('assets/atmosphere.gif')";
     case 'Clear':
-      document.body.style.backgroundImage = "url('assets/clear.gif')";
-      break;   
+       return "url('assets/clear.gif')";
     default:
-        document.body.style.backgroundImage = "url('assets/atmosphere.gif')";
-        break;
+        return "url('assets/atmosphere.gif')";
   }
-  return `Change theme to, ${climate}`;
 }
 
 export function change_icon(climate) {

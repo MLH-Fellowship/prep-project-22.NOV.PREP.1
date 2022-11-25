@@ -5,13 +5,16 @@ import Map from "./components/Map";
 import logo from "./mlh-prep.png";
 import { change_bg, change_icon } from "./color_scheme.js";
 import ItemNeed from "./components/CarryItems/ItemNeed";
+import Result from "./components/result_card";
+
+
 import Forecast from "./components/Forecast";
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [city, setCity] = useState("New York City");
   const [results, setResults] = useState(null);
-
+  const [gifurl,setGifUrl] = useState(change_bg());
   const [cityCoordinates, setCityCoordinates] = useState({
     lat: 51.505,
     lon: -0.09,
@@ -34,6 +37,7 @@ function App() {
               lon: result.coord.lon,
             });
             change_bg(result?.weather[0].main);
+            setGifUrl(result.weather[0].main);
           }
         },
         (error) => {
@@ -49,11 +53,21 @@ function App() {
 
   return (
     <React.Fragment>
-      <img className="logo" src={logo} alt="MLH Prep Logo"></img>
-      <div>
+      <img className="logo" src={logo} alt="MLH Prep Logo"></img>     
         <h2>Enter a city below 👇</h2>
         <SearchBar setCity={setCity} city={city} />
 
+        <div className="weather-map-container"> 
+          <div className="weather-map-container-wrapper"> 
+              <Result results={results} isLoaded={isLoaded} gifurl={gifurl}/>
+                <div className="weather-map">
+                  <Map 
+                    city={city}
+                    setCity={setCity}
+                    cityCoordinates={cityCoordinates}
+                    setCityCoordinates={setCityCoordinates}/>
+                </div>
+          </div>
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}
           {isLoaded && results && (
