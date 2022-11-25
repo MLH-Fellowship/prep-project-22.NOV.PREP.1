@@ -1,8 +1,9 @@
 body {
   background-color: #133667;
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
   color: white;
   text-align: center;
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 .logo {
