@@ -1,3 +1,4 @@
+import { Autocomplete, TextField } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { getAutocompleteCities } from "../../utils";
 
@@ -45,10 +46,11 @@ const SearchBar = ({ city, setCity }) => {
 
   return (
     <React.Fragment>
-      <h2>Enter a city below 👇</h2>
+      {/* <h2>Enter a city below 👇</h2> */}
 
       <div className="input-container">
         <i className="fa fa-map-marker input-icon" aria-hidden="true"></i>
+
         <input
           data-testid="search-bar"
           ref={inputRef}

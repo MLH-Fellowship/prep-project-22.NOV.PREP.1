@@ -11,23 +11,27 @@ body {
   width: auto;
 }
 
+.input-container {
+  position: relative;
+  margin-top: 5%;
+}
+
 .input-icon {
   position: absolute;
   color: black;
-  font-size: 25px;
-  padding-left: 10px;
-  padding-top: 7px;
+  font-size: 2rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
 }
 
 input {
-  padding: 10px;
-  padding-left: 35px !important;
+  padding-left: 3rem !important;
   border-radius: 4px;
   border: 10px;
-  width: 230px;
-  height: 20px;
+  width: 100%;
+  max-width: 25rem;
+  height: 3rem;
   font-size: 16px;
-  max-width: fit-content;
 }
 
 .Results {
