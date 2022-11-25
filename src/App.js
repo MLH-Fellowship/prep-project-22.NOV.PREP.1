@@ -6,6 +6,7 @@ import logo from "./mlh-prep.png";
 import { change_bg } from "./color_scheme.js";
 import ItemNeed from "./components/CarryItems/ItemNeed";
 import Result from "./components/result_card";
+import AppBar from "./components/app-bar/AppBar";
 
 function App() {
   const [error, setError] = useState(null);
@@ -52,7 +53,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <img className="logo" src={logo} alt="MLH Prep Logo"></img>
+      <AppBar />
+
       <div>
         <h2>Enter a city below 👇</h2>
         <SearchBar setCity={setCity} city={city} />
