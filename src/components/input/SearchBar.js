@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+// import { Autocomplete, TextField } from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
 import { getAutocompleteCities } from "../../utils";
 
 const SearchBar = ({ city, setCity }) => {
@@ -6,7 +7,7 @@ const SearchBar = ({ city, setCity }) => {
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   let reqTimeout = null;
 
-  useEffect (() => {
+  useEffect(() => {
     inputRef.current.value = city;
   }, [city]);
 
@@ -44,24 +45,27 @@ const SearchBar = ({ city, setCity }) => {
   };
 
   return (
-    <div className="input-container">
-      <i className="fa fa-map-marker input-icon" aria-hidden="true"></i>
-      <input
-        data-testid="search-bar"
-        ref={inputRef}
-        list="cities"
-        name="search"
-        type="text"
-        defaultValue="New York City"
-        placeholder="Enter a city"
-        autoComplete="off"
-        onKeyDown={handleEnter}
-        onChange={handleOnChange}
-        onInput={handleListItemClick}
-      />
+    <React.Fragment>
+      {/* <h2>Enter a city below 👇</h2> */}
 
-      {
-        autocompleteCities.length > 0 && (
+      <div className="input-container">
+        <i className="fa fa-map-marker input-icon" aria-hidden="true"></i>
+
+        <input
+          data-testid="search-bar"
+          ref={inputRef}
+          list="cities"
+          name="search"
+          type="text"
+          defaultValue="New York City"
+          placeholder="Enter a city"
+          autoComplete="off"
+          onKeyDown={handleEnter}
+          onChange={handleOnChange}
+          onInput={handleListItemClick}
+        />
+
+        {autocompleteCities.length > 0 && (
           <datalist data-testid="data-list" id="cities">
             {autocompleteCities.map((city, i) => (
               <option
@@ -70,9 +74,9 @@ const SearchBar = ({ city, setCity }) => {
               >{`${city.city}, ${city.country}`}</option>
             ))}
           </datalist>
-        )
-      }
-    </div>
+        )}
+      </div>
+    </React.Fragment>
   );
 };
 
