@@ -12,6 +12,7 @@ import "./styles/layout.css";
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+
   const [city, setCity] = useState("New York City");
   const [results, setResults] = useState(null);
   const [gifurl, setGifUrl] = useState(change_bg());
@@ -25,27 +26,27 @@ function App() {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_APIKEY}`
     )
       .then((res) => res.json())
-      .then(
-        (result) => {
-          if (result["cod"] !== 200) {
-            setIsLoaded(false);
-            return;
-          }
-
-          console.log(result);
-          setIsLoaded(true);
-          setResults(result);
-          setCityCoordinates({
-            lat: result.coord.lat,
-            lon: result.coord.lon,
-          });
-          setGifUrl(result.weather[0].main);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
+      .then((result) => {
+        if (result["cod"] !== 200) {
+          setIsLoaded(false);
+          return;
         }
-      );
+
+        console.log(result);
+
+        setIsLoaded(true);
+        setResults(result);
+        setCityCoordinates({
+          lat: result.coord.lat,
+          lon: result.coord.lon,
+        });
+
+        setGifUrl(result.weather[0].main);
+      })
+      .catch((error) => {
+        setIsLoaded(true);
+        setError(error);
+      });
   }, [city]);
 
   if (error) {

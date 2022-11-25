@@ -20,6 +20,7 @@ export default function Result(props) {
                 {change_icon(props.results?.weather[0].main)}
               </div>
             </div>
+
             <div className="weather-cotainer-right">
               <div className="weather-infos">
                 <p className="weather-info-heading">VISIBILITY</p>
