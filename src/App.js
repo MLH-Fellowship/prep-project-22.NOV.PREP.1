@@ -9,6 +9,7 @@ import NavBar from "./components/app-bar/AppBar";
 import { Container, Grid, Stack } from "@mui/material";
 import "./styles/layout.css";
 import Forecast from "./components/forecast/Forecast";
+import Footer from "./components/footer/footer";
 
 function App() {
   const [error, setError] = useState(null);
@@ -84,6 +85,7 @@ function App() {
           <Forecast city={city} />
 
           <ItemNeed resultantdata={results && results.weather[0].main} />
+          <Footer/>
         </Stack>
       </Container>
     </React.Fragment>
