@@ -1,0 +1,9 @@
+.card-group {
+  /* max-height: 30vh; */
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.card-group > * {
+  padding: 1rem;
+}

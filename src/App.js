@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SearchBar from "./components/input/SearchBar";
 import Map from "./components/Map";
-import logo from "./mlh-prep.png";
 import { change_bg } from "./color_scheme.js";
 import ItemNeed from "./components/CarryItems/ItemNeed";
 import Result from "./components/result_card";
 import AppBar from "./components/app-bar/AppBar";
+import { Container, Grid, Stack } from "@mui/material";
+import "./styles/layout.css";
 
 function App() {
   const [error, setError] = useState(null);
@@ -55,26 +56,27 @@ function App() {
     <React.Fragment>
       <AppBar />
 
-      <div>
-        <h2>Enter a city below 👇</h2>
-        <SearchBar setCity={setCity} city={city} />
+      <Container maxWidth="xl">
+        <Stack direction="column">
+          <SearchBar setCity={setCity} city={city} />
 
-        <div className="weather-map-container">
-          <div className="weather-map-container-wrapper">
-            <Result results={results} isLoaded={isLoaded} gifurl={gifurl} />
-            <div className="weather-map">
+          <Grid container direction="row" className="card-group">
+            <Grid item xs={12} md={6}>
+              <Result results={results} isLoaded={isLoaded} gifurl={gifurl} />
+            </Grid>
+            <Grid item xs={12} md={6}>
               <Map
                 city={city}
                 setCity={setCity}
                 cityCoordinates={cityCoordinates}
                 setCityCoordinates={setCityCoordinates}
               />
-            </div>
-          </div>
-        </div>
+            </Grid>
+          </Grid>
 
-        <ItemNeed resultantdata={results && results.weather[0].main} />
-      </div>
+          <ItemNeed resultantdata={results && results.weather[0].main} />
+        </Stack>
+      </Container>
     </React.Fragment>
   );
 }
