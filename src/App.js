@@ -8,6 +8,7 @@ import Result from "./components/result_card";
 import NavBar from "./components/app-bar/AppBar";
 import { Container, Grid, Stack } from "@mui/material";
 import "./styles/layout.css";
+import Forecast from "./components/forecast/Forecast";
 
 function App() {
   const [error, setError] = useState(null);
@@ -79,6 +80,8 @@ function App() {
               />
             </Grid>
           </Grid>
+
+          <Forecast city={city} />
 
           <ItemNeed resultantdata={results && results.weather[0].main} />
         </Stack>
