@@ -38,7 +38,7 @@ input {
   /* width: 900px; */
   /* max-height: 50vh; */
   height: 100%;
-  border-radius: 20px;
+  border-radius: 1rem;
   background-repeat: no-repeat;
   background-size: cover;
 }

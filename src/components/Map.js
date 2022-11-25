@@ -33,6 +33,7 @@ const SetMarkerDynamically = ({
     )
       .then((res) => res.json())
       .then((res) => {
+        // console.log("MAP: ", res);
         setCityCoordinates({ lat: e.latlng.lat, lon: e.latlng.lng });
         setCity(res.name);
       });
@@ -72,6 +73,7 @@ const Map = ({ city, setCity, cityCoordinates, setCityCoordinates }) => {
       style={{
         height: "100%",
         width: "100%",
+        borderRadius: "1rem",
       }}
     >
       <TileLayer
