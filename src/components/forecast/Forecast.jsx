@@ -38,7 +38,7 @@ export default function Forecast({ city }) {
                 icon: list[i].weather[0].icon,
               };
             }
-            console.log(data);
+            // console.log("DATA: ", data);
             setForecastData(data);
           }
         },
