@@ -9,6 +9,8 @@ import NavBar from "./components/app-bar/AppBar";
 import { Container, Grid, Stack } from "@mui/material";
 import "./styles/layout.css";
 import Forecast from "./components/forecast/Forecast";
+import Footer from "./components/footer/footer";
+import Loading from "./components/Loading/loading";
 
 function App() {
   const [error, setError] = useState(null);
@@ -55,38 +57,49 @@ function App() {
   }
 
   return (
-    <React.Fragment>
-      <NavBar />
-
-      <Container
-        maxWidth="xl"
-        sx={{
-          marginTop: "6rem",
-        }}
-      >
-        <Stack direction="column">
-          <SearchBar setCity={setCity} city={city} />
-
-          <Grid container direction="row" className="card-group">
-            <Grid item xs={12} md={6}>
-              <Result results={results} isLoaded={isLoaded} gifurl={gifurl} />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Map
-                city={city}
-                setCity={setCity}
-                cityCoordinates={cityCoordinates}
-                setCityCoordinates={setCityCoordinates}
-              />
-            </Grid>
-          </Grid>
-
-          <Forecast city={city} />
-
-          <ItemNeed resultantdata={results && results.weather[0].main} />
-        </Stack>
-      </Container>
-    </React.Fragment>
+    <>
+      {
+        isLoaded 
+        ? (<React.Fragment>
+          <NavBar />
+    
+          <Container
+            maxWidth="xl"
+            sx={{
+              marginTop: "6rem",
+            }}
+          >
+            <Stack direction="column">
+              <SearchBar setCity={setCity} city={city} />
+    
+              <Grid container direction="row" className="card-group">
+                <Grid item xs={12} md={6}>
+                  <Result results={results} isLoaded={isLoaded} gifurl={gifurl} />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Map
+                    city={city}
+                    setCity={setCity}
+                    cityCoordinates={cityCoordinates}
+                    setCityCoordinates={setCityCoordinates}
+                  />
+                </Grid>
+              </Grid>
+    
+              <Forecast city={city} />
+    
+              <ItemNeed resultantdata={results && results.weather[0].main} />
+            </Stack>
+          </Container>
+          <Footer/>
+        </React.Fragment>)
+        
+        : (
+          <Loading/>
+        )
+      }
+    </>
+    
   );
 }
 

@@ -1,0 +1,76 @@
+.MLHFooter {
+    padding: 20px;
+    border-bottom: 2px solid #888;
+    background-color: #133667;
+    margin-bottom: 0%;
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    box-shadow: 0px 0px 10px black;    
+    background-color: #133667;
+    background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+}
+  
+.text-center {
+    align-content: center;
+}
+
+.MLHFooter .fa {
+    padding: 18px;
+    font-size: 25px;
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 10px 15px 10px;
+    border-radius: 10px;
+    align-content: center;
+}
+  
+.MLHFooter .fa:hover {
+    opacity: 0.7;
+}
+  
+
+.MLHFooter .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.MLHFooter .fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.MLHFooter .fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.MLHFooter .fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.MLHFooter .fa-instagram {
+    background: #df5f87;
+    color: white;
+}
+
+.MLHFooter .copyright{
+    font-size: 14px;
+    color:#aaa;
+}
+
+.MLHFooter .podname{
+    font-size: 15px;
+    color: white;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
