@@ -20,8 +20,8 @@ function App() {
   const [results, setResults] = useState(null);
   const [gifurl, setGifUrl] = useState(change_bg());
   const [cityCoordinates, setCityCoordinates] = useState({
-    lat: 51.505,
-    lon: -0.09,
+    lat: 40.73,
+    lon: -74.04,
   });
 
   useEffect(() => {
