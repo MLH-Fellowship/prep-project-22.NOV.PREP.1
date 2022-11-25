@@ -11,6 +11,7 @@ const NavBar = () => {
           sx={{
             height: "10%",
             // marginBottom: "10%",
+            backgroundColor: "#133667",
           }}
         >
           <Toolbar>
