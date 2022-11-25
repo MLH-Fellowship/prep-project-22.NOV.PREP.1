@@ -1,3 +1,5 @@
+import { Card, CardContent, Stack } from "@mui/material";
+
 // import ForecastCard from "./ForecastCard";
 const ForecastCard = ({ forecastData, renderForecastData }) => {
   const renderCardData =
@@ -23,7 +25,15 @@ const ForecastCard = ({ forecastData, renderForecastData }) => {
   // console.log("DATES: ", dates);
 
   return (
-    <div className="card-wrapper">
+    <Stack
+      direction="row"
+      justifyContent="space-evenly"
+      spacing={3}
+      sx={{
+        marginTop: "3rem",
+        padding: "0",
+      }}
+    >
       {/* {console.log(renderCardData)} */}
       {/* {renderCardData &&
         Object.keys(renderCardData).map((key) => (
@@ -42,17 +52,37 @@ const ForecastCard = ({ forecastData, renderForecastData }) => {
         if (!item) return <></>;
 
         return (
-          <div className="card-container" style={{ display: "inline-block" }}>
-            <p>{days[i]}th</p>
-            <p className="temp">{Math.round(item.temp - 273.15, 2)}°C</p>
-            <img
-              src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`}
-              alt="weather icon"
-            />
-          </div>
+          <>
+            <Card>
+              <CardContent>
+                <Stack direction="column">
+                  <p
+                    style={{
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {days[i]}th
+                  </p>
+                  <p className="temp">{Math.round(item.temp - 273.15, 2)}°C</p>
+                  <img
+                    src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`}
+                    alt="weather icon"
+                  />
+                </Stack>
+              </CardContent>
+            </Card>
+            {/* <div className="card-container" style={{ display: "inline-block" }}>
+              <p>{days[i]}th</p>
+              <p className="temp">{Math.round(item.temp - 273.15, 2)}°C</p>
+              <img
+                src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`}
+                alt="weather icon"
+              />
+            </div> */}
+          </>
         );
       })}
-    </div>
+    </Stack>
   );
 };
 
