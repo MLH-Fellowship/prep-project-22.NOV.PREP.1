@@ -74,6 +74,7 @@ const Map = ({ city, setCity, cityCoordinates, setCityCoordinates }) => {
         height: "100%",
         width: "100%",
         borderRadius: "1rem",
+        minHeight: "300px",
       }}
     >
       <TileLayer
