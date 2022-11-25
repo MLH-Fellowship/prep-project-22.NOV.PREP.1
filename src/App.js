@@ -89,9 +89,9 @@ function App() {
               <Forecast city={city} />
     
               <ItemNeed resultantdata={results && results.weather[0].main} />
-              <Footer/>
             </Stack>
           </Container>
+          <Footer/>
         </React.Fragment>)
         
         : (
