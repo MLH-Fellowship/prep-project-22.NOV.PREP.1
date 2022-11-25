@@ -26,6 +26,7 @@ body {
 }
 
 input {
+  box-sizing: border-box;
   padding-left: 3rem !important;
   border-radius: 4px;
   border: 10px;
@@ -476,5 +477,11 @@ input {
   #temp {
     font-size: 3rem;
     margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .input-container {
+    max-width: 100%;
   }
 }

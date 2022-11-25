@@ -38,7 +38,7 @@ export default function Forecast({ city }) {
                 icon: list[i].weather[0].icon,
               };
             }
-            console.log(data);
+            // console.log("DATA: ", data);
             setForecastData(data);
           }
         },
@@ -51,12 +51,12 @@ export default function Forecast({ city }) {
     <div>
       <h3>Hourly Forecast</h3>
       <hr />
-      <Carousel itemsToShow={6}>
-        <ForecastCard
-          forecastData={forecastData}
-          renderForecastData={renderForecastCard}
-        ></ForecastCard>
-      </Carousel>
+      {/* <Carousel itemsToShow={6}> */}
+      <ForecastCard
+        forecastData={forecastData}
+        renderForecastData={renderForecastCard}
+      ></ForecastCard>
+      {/* </Carousel> */}
     </div>
   );
 }
