@@ -1,11 +1,25 @@
+import { AppBar, Box, Toolbar } from "@mui/material";
 import logo from "../../mlh-prep.png";
 
-const AppBar = () => {
+const NavBar = () => {
   return (
     <header>
-      <img className="logo" src={logo} alt="MLH Prep Logo"></img>
+      <Box>
+        <AppBar
+          component="nav"
+          color="transparent"
+          sx={{
+            height: "10%",
+            // marginBottom: "10%",
+          }}
+        >
+          <Toolbar>
+            <img className="logo" src={logo} alt="MLH Prep Logo"></img>
+          </Toolbar>
+        </AppBar>
+      </Box>
     </header>
   );
 };
 
-export default AppBar;
+export default NavBar;

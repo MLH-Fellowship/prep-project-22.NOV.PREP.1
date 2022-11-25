@@ -5,7 +5,7 @@ import Map from "./components/Map";
 import { change_bg } from "./color_scheme.js";
 import ItemNeed from "./components/CarryItems/ItemNeed";
 import Result from "./components/result_card";
-import AppBar from "./components/app-bar/AppBar";
+import NavBar from "./components/app-bar/AppBar";
 import { Container, Grid, Stack } from "@mui/material";
 import "./styles/layout.css";
 
@@ -54,9 +54,14 @@ function App() {
 
   return (
     <React.Fragment>
-      <AppBar />
+      <NavBar />
 
-      <Container maxWidth="xl">
+      <Container
+        maxWidth="xl"
+        sx={{
+          marginTop: "6rem",
+        }}
+      >
         <Stack direction="column">
           <SearchBar setCity={setCity} city={city} />
 
